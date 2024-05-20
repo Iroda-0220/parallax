@@ -28,3 +28,49 @@ function str (x = 0) {
     }
 }
 str()
+
+
+const parallaxBox = document.querySelector('.parallax-content')
+const parallaxBall = [...document.querySelectorAll('.parallax-ball')]
+
+parallaxBox.addEventListener('mousemove',(event) => {
+    console.log(window.innerWidth)
+    console.log(event.pageX)
+
+    parallaxBall.forEach(balls => {
+        const x = (window.innerWidth - event.pageX) / 20
+        const y = (window.innerHeight- event.pageY) / 20
+        console.log(x)
+        balls.style.transform = `translate (${x}px, ${y}px)`
+    })
+})
+
+
+// Timer
+const timer = document.querySelector('.timer')
+
+const  timerCardNum = [...document.querySelectorAll('.timerard__num')]
+
+window.addEventListener('scroll',function scrollTimer (){
+    if(this.scrollY >= timer.offsetTop - timer.offsetHeight){
+        timerStop()
+        this.removeEventListener('scroll',scrollTimer)
+    }
+})
+
+function timerStop () {
+    for ( let i=0; i < timerCardNum.length; i++){
+        const count = timerCardNum[i].getAttribute('data-num');
+
+        function calcCount (k = 0){
+            timerCardNum[i].innerHTML = k
+            k++
+            if (k <= count){
+                setTimeout( () => {
+                    calcCount(k)
+                },10)
+            }
+        }
+        calcCount()
+    }
+}

@@ -88,3 +88,76 @@ body{
     color: white;
     text-transform: capitalize;
 }
+.parallax {
+}
+.parallax-title {
+    text-align: center;
+    padding: 10px 0;
+    background-color: white;
+    font-size: 50px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+.parallax-content {
+    width: 100%;
+    height: 650px;
+    background-image: url(../parallax/Parallax_3.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+.parallax-ball {
+    position: absolute;
+}
+.ball_1 {
+    width: 400px;
+    top: 10%;
+    left: 105;
+}
+.ball_2 {
+    top: 10%;
+    right: 10%;
+}
+
+
+/* Timer */
+
+.timer {
+    background-color: indigo;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+.timer-cards {
+    display: flex;
+    justify-content: space-between;
+
+}
+.timer-card {
+    width: 250px;
+    height: 250px;
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    row-gap: 20px;
+}
+.timer-card__num {
+    font-size: 30px;
+    font-weight: 700;
+
+}
+.timer-card__text {
+    font-size: 22px;
+    font-weight: 700;
+}
+.timer-card__btn {
+    display: block;
+    background-color: indigo;
+    padding: 10px;
+    color: white;
+    border-radius: 5px;
+}
+/* Timer */
